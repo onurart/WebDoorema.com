@@ -1,0 +1,45 @@
+﻿@model WebDooreme.Models.MenuCategoiesViewModel
+@using WebDooreme.Helpers
+
+<div class="module category-style">
+    <h3 class="modtitle">ÜRÜNLER</h3>
+    <div class="modcontent">
+        <div class="box-category">
+            <ul id="cat_accordion" class="list-group">
+                @foreach (var item in Model.Categories)
+                {
+                    <li class="hadchild">
+                        @if (Model.SelectedCategory == item.CategoryName)
+                        {
+                            <a href="/urun/ana-kategori/@UrlExtension.FriendlyUrl(Url,item.CategoryName)/@item.CategoryId" class="active" title="@item.CategoryName" ref="@item.CategoryName" alt="@item.CategoryName">@item.CategoryName</a>
+                        }
+                        else
+                        {
+                            <a href="/urun/ana-kategori/@UrlExtension.FriendlyUrl(Url,item.CategoryName)/@item.CategoryId" title="@item.CategoryName" ref="@item.CategoryName" alt="@item.CategoryName">@item.CategoryName</a>
+                        }
+                        <ul>
+                            @{
+                                var tls = Model.Sub.Where(m => m.CategoryId == item.CategoryId).ToList();
+                            }
+                            @foreach (var sub in tls)
+                            {
+                                @if (Model.SelectedSubCategory == sub.SubCategoryName)
+                                {
+                                    string myCat = sub.CategoryId + "&subCategoryId=" + sub.SubCategoryId;
+                                    <li><a href="/urun/alt-kategori/@UrlExtension.FriendlyUrl(Url,sub.SubCategoryName)/@sub.CategoryId/@sub.SubCategoryId" class="active" title="@item.CategoryName" ref="@item.CategoryName" alt="@item.CategoryName">@sub.SubCategoryName</a></li>
+                                }
+                                else
+                                {
+                                    string myCat = sub.CategoryId + "&subCategoryId=" + sub.SubCategoryId;
+                                    <li><a href="/urun/alt-kategori/@UrlExtension.FriendlyUrl(Url,sub.SubCategoryName)/@sub.CategoryId/@sub.SubCategoryId" title="@item.CategoryName" ref="@item.CategoryName" alt="@item.CategoryName">@sub.SubCategoryName</a></li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<hr />

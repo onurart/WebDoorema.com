@@ -1,0 +1,69 @@
+﻿@model List<Product>
+@using WebDooreme.Helpers
+<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 extra-right">
+    <div class="module so-extraslider-ltr" style="border-radius: 30px 30px 30px 30px">
+        <h3 class="modtitle"><span> Özel Ürünler</span></h3>
+        <div class="modcontent">
+            <div class="so-extraslider">
+                <div class="yt-content-slider extraslider-inner products-list" data-rtl="yes" data-pagination="no" data-autoplay="yes" data-delay="4" data-speed="0.1" data-margin="30" data-items_column0="4" data-items_column1="4" data-items_column2="3" data-items_column3="2" data-items_column4="1" data-arrows="yes" data-lazyload="yes" data-loop="no" data-buttonpage="top">
+                    @foreach (var item in Model)
+                    {
+                        
+                        <div class="item " >
+                            <div class="product-layout product-grid2 style1">
+                                <div class="product-thumb transition product-item-container">
+                                    <div class="left-block">
+                                        <div class="product-image-container">
+                                            <div class="image">
+                                                @*<div class="box-label">
+                                                    <span class="label label-sale">-13%</span>
+                                                </div>*@
+                                                @{
+                                                    var imageSrcm = item.StockCode.ToLower();
+                                                    var strImagem = imageSrcm + ".jpg";
+                                                }
+                                                <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.ProductName)/@item.StockCode" alt="@item.ProductName" target="_self" title="Özel ürünler" ref="Özel ürünler">
+                                                    <img src="~/ProductImages/ProductL/@strImagem" height="184" width="184" title="@item.StockCode" alt="@item.ProductName" />
+                                                </a>
+                                            </div>
+                                            <!--quickview-->
+                                            <div class="so-quickview">
+                                                <a class=" btn-button quickview quickview_handler visible-lg" href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.ProductName)/@item.StockCode"
+                                               title="Ürün Detay" ref="Ürün Detay"><i class="fa fa-eye"></i><span>Ürün Detay</span></a>
+                                            </div>
+                                            <!--end quickview-->
+                                        </div>
+                                        <div class="caption" style="font-weight:700">
+                                            <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.ProductName)/@item.StockCode" target="_self" title="Ürün Detay" ref="Ürün Detay"></a>
+                                        </div>
+                                    </div>
+                                    <div class="right-block">
+                                        <div class="caption">
+                                            <h4><a href="urun/detay/@UrlExtension.FriendlyUrl(Url,item.ProductName)/@item.StockCode" target="_self" title="@item.StockCode" ref="Ürün Detay">@item.StockCode</a></h4>
+                                            @*<p class="price">
+                                                <span class="price-new">$66.00</span>
+                                                <span class="price-old">$76.00</span>
+                                            </p>*@
+                                            <div class="button-group">
+                                              @*  <button class="addToCart" title="Add to Cart" type="button" onclick="cart.add('69');">
+                                                    <i class="fa fa-shopping-cart"></i>  <span>Add to Cart</span>
+                                                </button>
+                                                <button class="btn-button wishlist" type="button" title="Add to Wish List" onclick="wishlist.add('69');">
+                                                    <i class="fa fa-heart"></i><span>Add to Wish List</span>
+                                                </button>
+                                                <button class="btn-button compare" type="button" title="Compare this Product" onclick="compare.add('69');">
+                                                    <i class="fa fa-refresh"></i><span>Compare this Product</span>
+                                                </button>
+*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿@model List<Technical>
+@section metatags{
+    <title>@ViewBag.title</title>
+    <meta name="keywords" content="@ViewBag.keywords" />
+    <meta name="description" content="@ViewBag.description" />
+}
+    <link href="~/css/w3.css" rel="stylesheet" />
+    @foreach (var item in Model)
+{
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Ana Sayfa</a></li>
+        <li><a href="#">Teknik Bilgi</a></li>
+    </ul>
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1300px" id="band">
+        <h2 class="w3-wide about-textt" style="line-height:25px; font-weight:bold; text-transform:uppercase;color: #ed1c24;" title="@item.Tİtle" ref="@item.Tİtle" alt="@item.Tİtle">@item.Tİtle</h2>
+        <p class="w3-justify about-textt" style="font-size:15px;line-height:25px;text-align:justify; color:black">
+            @item.Aciklama
+        </p>
+        <h2 class="w3-wide about-textt" title="@item.Title2" ref="@item.Title2" alt="@item.Title2"> style="color: #ed1c24; font-weight:bold;text-transform:uppercase">@item.Title2</h2>
+        <p class="w3-justify about-textt" style="font-size:15px;line-height:25px;text-align:justify; color:black">
+            @item.Acıklama2
+        </p>
+        <div class="row">
+            <div id="content" class="col-md-12 col-sm-3">
+                <div class="blog-header">
+                </div> <div id="content" class="col-md-12 col-sm-8">
+                    <div class="blog-category clearfix">
+                        <div class="blog-category clearfix">
+                            <div class="blog-listitem row" style="display:flex">
+                                <div class="blog-item col-lg-4 col-md-12 col-sm-8 col-xs-12">
+                                    <div class="blog-item-inner clearfix">
+                                        <div class="itemBlogImg clearfix">
+                                            <div class="article-image">
+                                                <div>
+                                                    <a class="popup-gallery" href="@item.Aİmages">
+                                                        <img src="@item.İmages" alt="@item.Title2" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="blog-item-inner clearfix">
+                                        <div class="itemBlogImg clearfix">
+                                            <div class="article-image">
+                                                <div>
+                                                    <a class="popup-gallery" href="@item.Aimages2">
+                                                        <img src="@item.Images2" alt="@item.Tİtle" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="blog-item-inner clearfix">
+                                        <div class="itemBlogImg clearfix">
+                                            <div class="article-image">
+                                                <div>
+                                                    <a class="popup-gallery" href="@item.Aimages3">
+                                                        <img src="@item.Images3" alt="@item.Title2" />
+                                                    </a>
+                                                </div>
+                                                <div class="article-date">
+                                                    <div class="date">
+                                                        <span class="article-date">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blog-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="blog-item-inner clearfix">
+                                        <div class="itemBlogImg clearfix">
+                                            <div class="article-image">
+                                                <div>
+                                                    <a class="popup-gallery" href="@item.Aimages2">
+                                                        <img src="@item.Images4" alt="@item.Title2" />
+                                                    </a>
+                                                </div>
+                                                <div class="article-date">
+                                                    <div class="date">
+                                                        <span class="article-date">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

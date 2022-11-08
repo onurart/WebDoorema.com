@@ -1,0 +1,76 @@
+﻿@using WebDooreme.Helpers
+@model List<Product>
+@ViewBag.viewkategori
+<div id="content" class="col-md-12 col-sm-8">
+    <div class="related titleLine products-list grid module ">
+        <h3 class="modtitle" title="Benzer Ürünler Products" ref="Benzer Ürünler Products" alt="Benzer Ürünler Products">Benzer Ürünler Products  </h3>
+        <hr />
+        <div class="releate-products yt-content-slider products-list" data-rtl="no" data-loop="yes" data-autoplay="no" data-autoheight="no" data-autowidth="no" data-delay="4" data-speed="0.6" data-margin="30" data-items_column0="5" data-items_column1="3" data-items_column2="3" data-items_column3="2" data-items_column4="1" data-arrows="yes" data-pagination="no" data-lazyload="yes" data-hoverpause="yes">
+            @foreach (var item in Model)
+            {
+
+                <div class="item">
+                    <div class="item-inner product-layout transition product-grid">
+                        <div class="product-item-container">
+                            <div class="left-block">
+                                <div class="product-image-container second_img">
+                                    @{
+                                        var imageSrcm = item.StockCode.ToLower();
+                                        var strImagem = imageSrcm + ".jpg";
+                                    }
+                                    <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.StockCode)/@item.StockCode" target="_self" title="@item.StockCode">
+                                        <img src="~/ProductImages/ProductL/@strImagem" class="img-1 img-responsive" title="@item.StockCode" ref="@item.StockCode" alt="@item.StockCode">
+                                        <img src="~/ProductImages/ProductL/@strImagem" class="img-2 img-responsive" title="@item.StockCode" ref="@item.StockCode" alt="@item.StockCode">
+                                    </a>
+                                </div>
+
+                                <div class="button-group so-quickview cartinfo--left">
+                                    <button type="button" class="addToCart btn-button" title="Add to cart" onclick="cart.add('60 ');">
+                                        <i class="fa fa-shopping-basket"></i>
+                                        <span>Add to cart </span>
+                                    </button>
+                                    <button type="button" class="wishlist btn-button" title="Add to Wish List" onclick="wishlist.add('60');">
+                                        <i class="fa fa-heart"></i><span>Add to Wish List</span>
+                                    </button>
+                                    <button type="button" class="compare btn-button" title="Compare this Product " onclick="compare.add('60');">
+                                        <i class="fa fa-refresh"></i><span>Compare this Product</span>
+                                    </button>
+                                    <!--quickview-->
+                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span>Quick view</span></a>
+                                    <!--end quickview-->
+                                </div>
+                            </div>
+                            <div class="right-block">
+                                <div class="caption">
+
+                                    <div class="rating">
+                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+                                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i></span>
+
+                                    </div>
+                                    <h4><a href="product.html" title="@item.StockCode" target="_self">@item.StockCode</a></h4>
+                                    <div class="list-block" style="font-size:15px; font-weight:700; text-transform:uppercase">
+                                        <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.StockCode)/@item.StockCode" target="_self" title="@item.StockCode">
+                                            <button class="addToCart btn-button btn btn-danger" type="button" title="@item.StockCode">
+                                                ÜRÜN DETAYI
+                                            </button>
+                                        </a>
+                     
+                                        <button class="wishlist btn-button btn btn-danger" type="button" title="Beğen" onclick="wishlist.add('101');">
+                                            <i class="fa fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</div>

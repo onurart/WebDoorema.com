@@ -1,0 +1,33 @@
+﻿@using WebDooreme.Helpers
+@using WebDooreme.Models
+@model List<Product>
+<div class="so-categories custom-slidercates module clearfix" style="border-radius:30px 30px 30px 30px">
+    <h3 class="modtitle"><span> Kampanya </span></h3>
+    <div class="modcontent" style="border-radius:30px 30px 30px 30px">
+        <div class="cat-wrap theme3 font-title yt-content-slider" data-rtl="yes" data-autoplay="yes" data-autoheight="no" data-delay="4" data-speed="0.1" data-margin="30" data-items_column0="4" data-items_column1="4" data-items_column2="3" data-items_column3="2" data-items_column4="1" data-arrows="yes" data-pagination="no" data-lazyload="yes" data-loop="no" data-hoverpause="yes">
+
+            @foreach (var item in Model)
+            {
+                <div class="content-box">
+                <div class="box-label">
+                    <span class="label label-sale">@item.InstallmentTable</span>
+                </div>
+                    @{
+                        var imageSrcm = item.StockCode.ToLower();
+                        var strImagem = imageSrcm + ".jpg";
+                    }
+                    <div class="image-cat">
+                        <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.StockCode)/@item.StockCode" alt="@item.ProductName" title="@item.ProductName" ref="Doorema @item.ProductName" target="_self">
+                            <img src="~/ProductImages/ProductL/@strImagem" title="@item.StockCode" style=" object-fit: contain;object-position: center;" width="400" height="320" title="Doorema @item.ProductName" ref="Doorema @item.ProductName" alt="Dooorema @item.ProductName" />
+                        </a>
+                    </div>
+                    <div class="cat-title">
+                        <a rel="canonical" href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.ProductName)/@item.StockCode" title="Doorema @item.ProductName" ref="Doorema @item.ProductName" alt="@item.ProductName" target="_self">@item.StockCode</a>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>

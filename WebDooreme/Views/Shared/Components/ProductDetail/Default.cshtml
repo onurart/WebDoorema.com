@@ -1,0 +1,37 @@
+﻿@using WebDooreme.Models
+@using WebDooreme.Helpers
+@model Product
+@*Tüm Fotoğragların Geldiği Awwwlan*@
+@*ProductDetails*@
+<div class="item ">
+    <div class="product-layout product-grid2 style1">
+        <div class="product-thumb transition product-Model-container">
+            <div class="left-block">
+                <div class="product-image-container">
+                    <div class="image">
+                        <div class="box-label">
+                            @{
+                                var imageSrcm = Model.StockCode.ToLower();
+                                var strImagem = imageSrcm + ".jpg";
+                            }
+                            <span class="label"></span>
+                        </div>
+                        <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,@Model.StockCode)/@Model.StockCode" data-fancybox-type="iframe" target="_self" title="@Model.StockCode">
+                            <img src="~/ProductImages/ProductL/@strImagem" alt="@Model.ProductName " height="280" class="img-responsive" ref="@Model.ProductName" alt="@Model.ProductName" title="@Model.ProductName" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-block">
+                <div class="caption">
+                    <h4 class="text-center">
+                        <a class="btn-button quickview quickview_handler visible-lg" href="/urun/detay/@UrlExtension.FriendlyUrl(Url,@Model.StockCode)/@Model.StockCode" target="_self" title="@Model.ProductName">@Model.StockCode.ToUpper()</a>
+                    </h4>
+                    <center class="price">
+                   @*     <span class="price-new">@Model.ProductName</span>*@
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

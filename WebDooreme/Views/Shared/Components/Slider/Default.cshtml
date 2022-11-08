@@ -1,0 +1,43 @@
+﻿@using WebDooreme.Models
+@model IList<Slider>
+<style>
+    .fa-turkish-lira:before, .fa-try:before {
+        color: #ED1C24
+    }
+    .fa-calendar:before {
+        color: #ED1C24
+    }
+    .fa-wrench:before {
+        color: #ED1C24
+    }
+</style>
+<div class="box-content1">
+    
+    <div class="module sohomepage-slider ">
+        <div class="yt-content-slider" data-rtl="yes" data-autoplay="yes" data-autoheight="no" data-delay="3" data-speed="2.1" data-margin="0" data-items_column0="1" data-items_column1="1" data-items_column2="1" data-items_column3="1" data-items_column4="1" data-arrows="yes" data-pagination="no" data-lazyload="yes" data-loop="yes" data-hoverpause="yes">
+            @foreach (var item in Model)
+            {
+                <div class="yt-content-slide">
+                    <a href="#"><img src="@item.Image" title="Doorema Slider Banner" ref="Doorema Slider Banner" alt="Doorema Slider Banner" class="img-responsive"></a>
+                </div>
+            }
+        </div>
+        <div class="loadeding"></div>
+    </div>
+    <div class="block-policy4">
+        <div class="inner">
+            <div class="policy policy1">
+                <a title="Doorema Slider Banner" ref="Doorema Yerli Üretim" alt="Doorema Slider Banner" href="javascript:void(0)"><span><i><img src="~/yerliuretim.png" width="40" height="45" title="Doorema Yerli Üretim" ref="Doorema Yerli Üretim" alt="Doorema Yerli Üretim" /></i>Yerli Üretim</span></a>
+            </div>
+            <div class="policy policy2">
+                <a title="Doorema Slider Banner" ref="Düşük Fiyat Garantisi" alt="Düşük Fiyat Garantisi" href="javascript:void(0)"><span><i class="fa fa-try"></i>Düşük Fiyat Garantisi</span></a>
+            </div>
+            <div class="policy policy3">
+                <a title="Doorema Slider Banner" ref="Zamanında Teslimat Garantisi" alt="Zamanında Teslimat Garantisi" href="javascript:void(0)"><span><i class="fa fa-calendar"></i>Zamanında Teslimat Garantisi</span></a>
+            </div>
+            <div class="policy policy4">
+                <a title="online  24/24" href="javascript:void(0)"><span><i class="fa fa-wrench"></i>7/24 Teknik Destek</span></a>
+            </div>
+        </div>
+    </div>
+</div>

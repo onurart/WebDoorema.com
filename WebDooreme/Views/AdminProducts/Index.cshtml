@@ -1,0 +1,266 @@
+﻿@model IEnumerable<WebDooreme.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div class="row page-header no-background no-shadow margin-b-0">
+        <div class="col-lg-6 align-self-center ">
+            <h2></h2>
+            <ol class="breadcrumb">
+            </ol>
+        </div>
+        <div class="col-lg-6 align-self-center text-right">
+            <a class="btn btn-success box-shadow btn-icon btn-rounded" asp-action="Create"><i class="fa fa-plus"></i>Yeni Ürün Ekle</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+        <table id="datatable" class="table table-striped dt-responsive nowrap">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Keywords)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstallmentTable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountPrice2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountPrice3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RelegatePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoDiamension)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thumbnail1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thumbnail2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Thumbnail3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDetail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductWords)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Campaign)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PopulateProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MainPageProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecomandedProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViewCase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCategoryClass)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Keywords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstallmentTable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountPrice2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountPrice3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelegatePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CargoPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CargoDiamension)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumbnail1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumbnail2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumbnail3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductDetail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductWords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Campaign)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PopulateProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainPageProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecomandedProduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViewCase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCategoryClass.SubCategoryClassId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

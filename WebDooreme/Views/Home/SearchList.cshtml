@@ -1,0 +1,99 @@
+﻿@model List<Product>
+@using WebDooreme.Helpers
+@section metatags{
+    <title>@ViewBag.title</title>
+    <meta name="keywords" content="@ViewBag.keywords" />
+    <meta name="description" content="@ViewBag.description" />
+}
+<body class="res layout-1">
+    <div id="wrapper" class="wrapper-fluid banners-effect-5">
+        <div class="main-container container">
+            <ul class="breadcrumb">
+                <li><a href="/anasayfa"><i class="fa fa-home"></i></a></li>
+                <li><a href="#">Arama Listesi</a></li>
+            </ul>
+            <div class="row">
+                <aside class="col-sm-4 col-md-3 content-aside" id="column-left">
+                    @await Component.InvokeAsync("ProductCategoriesMenu")
+                </aside>
+                <div id="content" class="col-md-9 col-sm-8">
+                    <div class="products-category">
+                        <div class="products-list row nopadding-xs so-filter-gird grid">
+                            @if (Model.Count > 0)
+                            {
+                                @foreach (var item in Model)
+                                {<div class="product-layout col-lg-14 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="product-item-container">
+                                            <div class="left-block">
+                                                <div class="product-image-container second_img">
+                                                    <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.StockCode)/@item.StockCode" target="_self" title="@item.StockCode.ToUpper()">
+                                                        @{
+                                                            var imageSrcm = item.StockCode.ToLower();
+                                                            var strImagem = imageSrcm + ".jpg";
+                                                        }
+                                                        <img src="~/ProductImages/ProductL/@strImagem" height="239" class="img-1 img-responsive" alt="@item.ProductName">
+                                                        <img src="~/ProductImages/ProductL/@strImagem" height="239" class="img-2 img-responsive" alt="@item.ProductName">
+                                                    </a>
+                                                </div>
+                                                <div class="box-label"> <span class="label-product"> </span></div>
+                                                <div class="button-group so-quickview cartinfo--left">
+                                                    @*<button type="button" class="wishlist btn-button" title="Add to Wish List" onclick="wishlist.add('60');">
+                                                            <i class="fa fa-heart"></i><span>Add to Wish List</span>
+                                                        </button>
+                                                        <button type="button" class="compare btn-button" title="Compare this Product " onclick="compare.add('60');">
+                                                            <i class="fa fa-refresh"></i><span>Compare this Product</span>
+                                                        </button>*@
+                                                    <!--quickview-->
+                                                    <a class="btn-button quickview quickview_handler visible-lg" href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.StockCode)/@item.StockCode" title="@item.ProductName" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span>Detay</span></a>
+                                                    <!--end quickview-->
+                                                </div>
+                                            </div>
+                                            <div class="right-block">
+                                                <div class="caption">
+                                                    @*<div class="rating">
+                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                                                        </div>*@
+                                                    <h4><a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.StockCode)/@item.StockCode" title="@item.ProductName" target="_self">@item.StockCode.ToUpper()</a></h4>
+                                                    @*<div class="description item-desc">
+                                                            <p>@item.Description </p>
+                                                        </div>*@
+                                                    <div class="list-block">
+                                                        @*<button class="addToCart btn-button" type="button" title="Sepete Ekle" onclick="cart.add('101', '1');">
+                                                                <i class="fa fa-shopping-basket"></i>
+                                                            </button>
+                                                            <button class="wishlist btn-button" type="button" title="Add to Wish List" onclick="wishlist.add('101');">
+                                                                <i class="fa fa-heart"></i>
+                                                            </button>*@
+                                                        @*<button class="compare btn-button" type="button" title="Compare this Product" onclick="compare.add('101');">
+                                                                <i class="fa fa-refresh"></i>
+                                                            </button>*@
+                                                        <!--quickview-->
+                                                        <!--<a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i></a>-->
+                                                        <!--end quickview-->
+                                                        <!--</div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="product-layout col-lg-14 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="product-item-container">
+                                        <p class="text-danger">Aradığınız isimde/kodda ürün bulunamadı!</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

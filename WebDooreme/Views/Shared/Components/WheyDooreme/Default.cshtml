@@ -1,0 +1,176 @@
+﻿<style>
+    .modal-window {
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.25);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+    }
+
+        .modal-window:target {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-window > div {
+            width: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2em;
+            background: white;
+        }
+
+        .modal-window header {
+            font-weight: bold;
+        }
+
+        .modal-window h1 {
+            font-size: 150%;
+            margin: 0 0 15px;
+        }
+
+    .modal-close {
+        color: #aaa;
+        line-height: 50px;
+        font-size: 80%;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 70px;
+        text-decoration: none;
+    }
+
+        .modal-close:hover {
+            color: black;
+        }
+    /* Demo Styles */
+
+
+    .modal-window > div {
+        border-radius: 1rem;
+    }
+
+    .modal-window div:not(:last-of-type) {
+        margin-bottom: 1px;
+    }
+
+</style>
+<div class="banners banners3">
+    <div class="banner">
+        <a href="@Url.Action("KatologPdf","Home")">
+            <img src="~/image/HomeImages/dorema.jpg" style="width:100%" alt="Doorema image">
+        </a>
+    </div>
+</div>
+<div id="open-modal" class="modal-window">
+    <div>
+        <a href="#display:none" style="" title="Kilit Koruma Çeliği! Standart" alt="Kilit Koruma Çeliği! Standart" ref="Kilit Koruma Çeliği! Standart" class="modal-close">Kapat</a>
+        <h1>Kilit Koruma Çeliği! Standart</h1>
+        <div>Çelik kapının, kriko ile gerdirilmesine karşı, kilit sistemi ile çelik kapı kasası arasına yerleştirilen, 3 mm kalınlığında çelik bloktur.</div>
+        <br>
+
+    </div>
+</div>
+<div id="open-modalb2" class="modal-window">
+    <div>
+        <a href="#display:none" title="Metrik 8 ,civatalı Çelik Rozet Standart" alt="Metrik 8 ,civatalı Çelik Rozet Standart" ref="Metrik 8 ,civatalı Çelik Rozet Standart" class="modal-close">Kapat</a>
+        <h1>Metrik 8 ,civatalı Çelik Rozet Standart</h1>
+        <div>Sektör genelinde halen daha metrik 5 civata ile barel koruyucu rozet kullanılmakta iken, kilit sistemine müdahaleyi en aza indiren rozetlerde bağlantı civatalarının ölçüsünü Metrik 8'e çıkarttık..</div>
+        <br>
+
+    </div>
+</div>
+<div id="open-modaltuzakli" class="modal-window">
+    <div>
+        <a href="#display:none" title="Tuzaklı Barel Sistemi Opsiyonel" alt="Tuzaklı Barel Sistemi Opsiyonel" ref="Tuzaklı Barel Sistemi Opsiyonel" class="modal-close">Kapat</a>
+        <h1>Tuzaklı Barel Sistemi Opsiyonel</h1>
+        <div>Çelik kapı bareline gelebilecek olası saldırılara karşı, barel sisteminiz zarar görse bile kapınızın açılmamasını sağlayan bir sistemdir. Ön barel bölümü parçalandığında kilit sistemine yapılan müdahale tamamen engellenecektir.</div>
+        <br>
+
+    </div>
+</div>
+<div id="open-modalParmakİzi" class="modal-window">
+    <div>
+        <a href="#display:none" title="Parmak İzi" alt="Parmak İzi" ref="Parmak İzi" class="modal-close">Kapat</a>
+        <h1>Parmak İzi</h1>
+        <div>Kapınızın sizi parmak izinizden tanımasını sağlayarak, anahtar taşıma derdine son verip, kopyalanamaz parmak iziniz ile evinize güvenle giriş çıkış imkanı veriyoruz. Sistem aynı zamanda uzaktan kumanda ile de kullanılabilir.</div>
+        <br>
+
+    </div>
+</div>
+<div id="open-modalDarbeye" class="modal-window">
+    <div>
+        <a href="#display:none" title="Darbeye Duyarlı" alt="Darbeye Duyarlı" ref="Darbeye Duyarlı" class="modal-close">Kapat</a>
+        <h1>Darbeye Duyarlı</h1>
+        <div>Kapıya gelen şiddetli darbeleri veya kapının açıldığını algıladığında uyaran, uzaktan kumanda kontrollü hırsız alarm sistemidir. 105 desibel şiddeti ile hırsızların matkap veya sert cisimlerle kapınızı açmasını engeller.</div>
+        <br>
+
+    </div>
+
+
+</div>
+<div id="open-modalAyarlı" class="modal-window">
+    <div>
+        <a href="#display:none" class="modal-close" title="Ayarlı Menteşe" alt="Ayarlı Menteşe" ref="Ayarlı Menteşe">Kapat</a>
+        <h1>Ayarlı Menteşe</h1>
+        <div>Eksenlere göre hareket edebilen menteşe sistemimiz, inbus özel vidalarla birleştirilen iç ve dış kasa, kasaya geçen 6 adet sabit pim ile güvenlik unsurlarını ve uzun ömürlü yapıyı en üst seviyeye ulaştırıyoruz.</div>
+        <br>
+
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="banners banners7">
+        <div class="banner1 col-lg-3 col-md-3 col-sm-8 col-xs-12">
+            <div class="b1">
+                <a href="#open-modal" alt="Kilit Koruma Çeliği! Standart" title="Kilit Koruma Çeliği! Standart" ref="Kilit Koruma Çeliği! Standart">
+                    <img src="~/ProductImages/WhyUs/kmck.jpg" alt="Kilit Koruma Çeliği! Standart" title="Kilit Koruma Çeliği! Standart" ref="Kilit Koruma Çeliği! Standart">
+                </a>
+            </div>
+            <div class="b2">
+                <a href="#open-modalb2" alt="Metrik 8 ,civatalı Çelik Rozet Standart" title="Metrik 8 ,civatalı Çelik Rozet Standart" ref="Metrik 8 ,civatalı Çelik Rozet Standart">
+                    <img src="~/ProductImages/WhyUs/celik-rozet.jpg" alt="Metrik 8 ,civatalı Çelik Rozet Standart" title="Metrik 8 ,civatalı Çelik Rozet Standart" ref="Metrik 8 ,civatalı Çelik Rozet Standart">
+                </a>
+            </div>
+            <div class="b2">
+                <a href="#open-modaltuzakli" alt="Tuzaklı Barel Sistemi Opsiyonel" title="Tuzaklı Barel Sistemi Opsiyonel" ref="Tuzaklı Barel Sistemi Opsiyonel">
+                    <img src="~/ProductImages/WhyUs/tuzakli-barel.jpg" alt="Tuzaklı Barel Sistemi Opsiyonel" title="Tuzaklı Barel Sistemi Opsiyonel" ref="Tuzaklı Barel Sistemi Opsiyonel">
+                </a>
+            </div>
+        </div>
+        <div class="banner2 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <a href="@Url.Action("KatologPdf","Home")" alt="Doorema Katolog Pdf" title="Doorema Katolog Pdf" ref="Doorema Katolog Pdf">
+
+                <img src="~/image/HomeImages/image00.jpg" alt="Doorema Katolog Pdf" title="Doorema Katolog Pdf" ref="Doorema Katolog Pdf">
+            </a>
+        </div>
+        <div class="banner3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="b1">
+                <a href="#open-modalParmakİzi" alt="Doorema Katolog Pdf" title="Doorema Parmak İzi" ref="Doorema Parmak İzi">
+                    <img src="~/ProductImages/WhyUs/Parmakİzi.png" alt="Doorema Parmak İzi" title="Doorema Parmak İzi" ref="Doorema Parmak İzi">
+                </a>
+            </div>
+            <div class="b2">
+                <a href="#open-modalDarbeye" alt="Doorema Katolog Pdf" title="Doorema Alarm" ref="Doorema Alarm">
+                    <img src="~/ProductImages/WhyUs/Alarm.png" alt="Doorema Alarm" title="Doorema Alarm" ref="Doorema Alarm">
+                </a>
+            </div>
+            <div class="b2">
+                <a href="#open-modalAyarlı" alt="Doorema Katolog Pdf" title="Doorema ayarli-mentese" ref="Doorema ayarli-mentese">
+                    <img src="~/ProductImages/WhyUs/ayarli-mentese.jpg" alt="Doorema ayarli-mentese" title="Doorema ayarli-mentese" ref="Doorema ayarli-mentese">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

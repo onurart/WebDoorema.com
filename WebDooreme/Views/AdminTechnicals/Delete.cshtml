@@ -1,0 +1,91 @@
+﻿@model WebDooreme.Models.Technical
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-4">
+            <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tİtle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tİtle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Acıklama2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Acıklama2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.İmages)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.İmages)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Aİmages)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aİmages)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Images2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Images2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Aimages2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aimages2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Images3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Images3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Aimages3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aimages3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Images4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Images4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Aimages4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Aimages4)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+        </div>
+    </div>
+    </div>
+</section>

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/img/icon.png">
+    <link href="~/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/lib/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="~/assets/lib/chart-c3/c3.min.css" rel="stylesheet">
+    <link href="~/assets/lib/chartjs/chartjs-sass-default.css" rel="stylesheet">
+    <link href="~/assets/lib/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/lib/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/lib/toast/jquery.toast.min.css" rel="stylesheet">
+    <link href="~/assets/scss/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar light-top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <a class="admin-logo dark-logo" href="index.html">
+                        <h1>
+                            <img alt="" src="~/assets/img/icon.png" class="logo-icon margin-r-10">
+                            <img alt="" src="~/assets/img/logo-default.png" class="toggle-none hidden-xs">
+                        </h1>
+                    </a>
+                    <div class="left-nav-toggle">
+                        <a href="#" class="nav-collapse"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <div class="left-nav-collapsed">
+                        <a href="#" class="nav-collapsed"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <div class="search-form hidden-xs">
+                        <form>
+                            <input class="form-control" placeholder="Search for..." type="text"> <button class="btn-search" type="button"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-sidebar-nav dark-navigation">
+        <div class="nano">
+            <div class="nano-content sidebar-nav">
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-heading"><span>MENU</span></li>
+                    <li class="nav-item active"><a class="nav-link" href="@Url.Action("Index","Admin")"><i class="fa fa-home"></i> <span class="toggle-none">PANEL <span class="badge badge-pill badge-danger float-right mr-2"></span></span></a></li>
+                    <li class="nav-item active"><a class="nav-link" href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> <span class="toggle-none">WEB SİTE <span class="badge badge-pill badge-danger float-right mr-2"></span></span></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-th-large"></i> <span class="toggle-none">BLOG <span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column " aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminBlogs")">YENİ YAZI EKLE</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-codepen"></i> <span class="toggle-none">Ürün <span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminProducts")">Ürün Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-codepen"></i> <span class="toggle-none">Kategori <span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminCategories")">Kategori Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-envelope-open"></i> <span class="toggle-none">Slider<span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminSliders")">Slider Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-envelope-open"></i> <span class="toggle-none">Reference<span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminReferences")">Reference Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-envelope-open"></i> <span class="toggle-none">Teknik Bilgi<span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminTechnicals")">Teknik Bilgi Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-envelope-open"></i> <span class="toggle-none">Belgeler<span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminDocuments")">Belgeler</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-envelope-open"></i> <span class="toggle-none">Kurumsal<span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminInstitutionals")">Kurumsal Ekle</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-envelope-open"></i> <span class="toggle-none">Soru Cevap Ekle<span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","AdminFaq")">Yeni Ekle</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><i class="fa fa-envelope-open"></i> <span class="toggle-none">Referans Tablo<span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","ReferansTables")">Yeni Ekle</a></li>
+                        </ul>
+                    </li>
+                 
+                    <li class="nav-item">
+                        <a class="nav-link" href="/WebLogin/LogOut">Çikiş Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <script src="~/assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/lib/bootstrap/js/popper.min.js"></script>
+    <script src="~/assets/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/assets/lib/pace/pace.min.js"></script>
+    <script src="~/assets/lib/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+    <script src="~/assets/lib/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/lib/nano-scroll/jquery.nanoscroller.min.js"></script>
+    <script src="~/assets/lib/metisMenu/metisMenu.min.js"></script>
+    <script src="~/assets/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/assets/lib/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/assets/js/jquery.ui.widget.js"></script>
+    <script src="~/assets/js/query.iframe-transport.js"></script>
+    <script src="~/assets/js/jquery.fileupload.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+            $('#datatable2').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            });
+            $('#datatable3').DataTable({
+                "scrollY": "400px",
+                "scrollCollapse": true,
+                "paging": false
+            });
+        });
+    </script>
+    <script>
+        $('#datatable').DataTable({
+            language: {
+                info: "_TOTAL_ kayıttan _START_ - _END_ kayıt gösteriliyor.",
+                infoEmpty: "Gösterilecek hiç kayıt yok.",
+                loadingRecords: "Kayıtlar yükleniyor.",
+                lengthMenu: "Sayfada _MENU_ kayıt göster",
+                zeroRecords: "Tablo boş",
+                search: "Arama:",
+                infoFiltered: "(toplam _MAX_ kayıttan filtrelenenler)",
+                buttons: {
+                    copyTitle: "Panoya kopyalandı.",
+                    copySuccess: "Panoya %d satır kopyalandı",
+                    copy: "Kopyala",
+                    print: "Yazdır",
+                },
+                paginate: {
+                    first: "İlk",
+                    previous: "Önceki",
+                    next: "Sonraki",
+                    last: "Son"
+                },
+            }
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@using WebDooreme.Models
+@model List<Document>
+@section metatags{
+    <title>@ViewBag.title</title>
+@*    <meta name="keywords" content="@ViewBag.keywords" />
+*@    <meta name="description" content="@ViewBag.description" />
+}
+<div class="main-container container">
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Ana Sayfa</a></li>
+        <li><a href="#">Belgeler</a></li>
+    </ul>
+    <div class="row">
+        <!--Left Part Start -->
+        <!--Left Part End -->
+        <!--Middle Part Start-->
+        <div id="content" class="col-lg-offset-1 col-md-10 col-sm-8" style="margin-right:-50px">
+            <div class="blog-header">
+            </div>
+            <div class="blog-category clearfix">
+                <div class="blog-listitem row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="blog-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="blog-item-inner clearfix">
+                                <div class="itemBlogImg clearfix">
+                                    <div class="article-image">
+                                        <div>
+                                            <a class="popup-gallery" href="@item.Aimages">
+                                                <img src="@item.Images" alt="@item.Name" />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="itemBlogContent clearfix">
+                                    <div class="blog-content">
+                                        <div class="article-title font-title">
+                                            <h4>
+                                                <a class="popup-gallery" href="@item.Aimages">@item.Name</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@using WebDooreme.Helpers
+@using WebDooreme.Models
+@model List<Blog>
+@{
+    ViewData["Title"] = "Index";
+}
+<body class="res layout-1">
+    <div id="wrapper" class="wrapper-fluid banners-effect-5">
+        <div class="main-container container">
+            <ul class="breadcrumb">
+                <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"> Ana Sayfa</i></a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+            <div class="row">
+                <!--Left Part Start -->
+                <aside class="col-md-3 col-sm-4 col-xs-12 content-aside left_column " id="column-left">
+                    <div class="module blog-category titleLine">
+                        <h3 class="modtitle">En Son Blog Yazilari</h3>
+                        @await Component.InvokeAsync("LastBlogCategories")
+                    </div>
+                </aside>
+                <div id="content" class="col-md-9 col-sm-8">
+                    <div class="blog-category clearfix">
+                        <div class="blog-listitem row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="blog-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="blog-item-inner clearfix">
+                                        <div class="itemBlogImg clearfix">
+                                            <div class="article-image">
+                                                <div>
+                                                    <a class="popup-gallery" href="~/upload/@item.ImageUrl">
+                                                        <img src="~/upload/@item.ImageUrl" alt="@item.Title" />
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="itemBlogContent clearfix ">
+                                            <div class="blog-content">
+                                                <div class="article-title font-title">
+                                                    <h4><a href="/blog/detay/@UrlExtension.FriendlyUrl(Url,item.Title)/@item.Id">@item.Title</a></h4>
+                                                </div>
+                                                <p class="article-description" style="font-weight:600">@item.Description.Substring(0,130)...</p>
+                                                <div class="readmore">
+                                                    <a class="btn-readmore font-title" href="/blog/detay/@UrlExtension.FriendlyUrl(Url,item.Title)/@item.Id"><i class="fa fa-caret-right"></i>Devamı</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                        <div class="product-filter product-filter-bottom filters-panel clearfix">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

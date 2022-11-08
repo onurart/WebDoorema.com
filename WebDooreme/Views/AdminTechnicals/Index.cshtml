@@ -1,0 +1,116 @@
+﻿@model IEnumerable<WebDooreme.Models.Technical>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div class="row page-header no-background no-shadow margin-b-0">
+        <div class="col-lg-6 align-self-center ">
+            <h2></h2>
+            <ol class="breadcrumb">
+            </ol>
+        </div>
+        <div class="col-lg-6 align-self-center text-right">
+            <a class="btn btn-success box-shadow btn-icon btn-rounded" asp-action="Create">Yeni Yazı Ekle</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <table id="datatable" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tİtle)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Aciklama)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Acıklama2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.İmages)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Aİmages)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Images2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Aimages2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Images3)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Aimages3)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Images4)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Aimages4)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Tİtle)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Aciklama)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Acıklama2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.İmages)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Aİmages)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Images2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Aimages2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Images3)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Aimages3)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Images4)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Aimages4)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,177 @@
+﻿@using WebDooreme.Helpers
+@model List<Category>
+<footer class="footer-container typefooter-4">
+    <!-- Footer Top Container -->
+    <section class="footer-top">
+        <div class="container">
+            <div class="module newsletter-footer4">
+                <div class="newsletter">
+                    <div class="title-block">
+                        <div class="promotext">En son ürün trendlerini ve sektör haberlerini doğrudan gelen kutunuza teslim edin.</div>
+                    </div>
+                    <div class="block_content">
+                        <form asp-action="Details" asp-controller="Product"  method="post" class="form-group form-inline signup send-mail">
+                            <div class="form-group">
+                                <div class="input-box">
+                                    <input type="email" placeholder="E-mail adresinizi yazınız." value="" class="form-control" id="txtemail" name="txtemail" size="55">
+                                </div>
+                                <div class="subcribe">
+                                    <button class="btn btn-primary btn-default font-title" type="submit" onclick="return subscribe_newsletter();" name="submit" style="float:right">
+                                        Kayıt ol
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--/.modcontent-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Footer Top Container -->
+    <section class="footer-middle ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col_4202  col-style">
+                    <div class="infos-footer box-footer">
+                        <div class="module">
+                            <h3 class="modtitle" title="İletişim" ref="İletişim" alt="İletişim">İletişim</h3>
+                            <ul  style="margin-left:15px">
+                                <li class="adres">
+                                    <i class="fa fa-map-marker">1</i>Defterdar Mahallesi Demirkapı Keresteciler Sitesi
+                                    Çaycılar Sokak No: 2
+                                    <br> Eyüp/İstanbul/Türkiye
+                                   
+                                </li>
+                                <li class="mail">
+                                    <a href="mailto:ema@emacelikkapi.com=?subject = Feedback&body = Message" title="İletişim" ref="İletişim" alt="İletişim">
+                                        <i class="fa fa-envelope">2</i>ema@emacelikkapi.com
+                                    </a>
+                                </li>
+                                <li class="mail" style="margin-top:20px">
+                                    <a href="mailto:ema@emacelikkapi.com=?subject = Feedback&body = Message" title="İletişim" ref="İletişim" alt="İletişim">
+                                        <i class="fa fa-mobile"></i>  +90.212.523.02.53-59
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col_bko7  col-style">
+                    <div class="box-account box-footer">
+                        <div class="module clearfix">
+                            <h3 class="modtitle" title="İletişim" ref="İletişim" alt="İletişim">Ürünlerimiz</h3>
+                            <div class="modcontent">
+                                <ul class="menu">
+                                    @foreach (var item in Model)
+                                    {
+                                        <li><a href="/urun/ana-kategori/@UrlExtension.FriendlyUrl(Url,item.CategoryName)/@item.CategoryId" title="İletişim" ref="İletişim" alt="İletişim">@item.CategoryName</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col_6urb  col-style">
+                    <div class="box-information box-footer">
+                        <div class="module clearfix">
+                            <h3 class="modtitle" title="İletişim" ref="İletişim" alt="İletişim">Menü </h3>
+                            <div class="modcontent">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="/kurumsal" title="Kurumsal" ref="Kurumsal" alt="Kurumsal">Kurumsal</a>
+                                    </li>
+                                    <li>
+                                        <a href="/teknik-bilgi" title="Teknik Bilgi" ref="Teknik Bilgi" alt="Teknik Bilgi">Teknik Bilgi</a>
+                                    </li>
+                                    <li>
+                                        <a href="/proje-yonetimi" title="Proje Yönetimi" ref="Proje Yönetimi" alt="Proje Yönetimi">Proje Yönetimi</a>
+                                    </li>
+                                    <li>
+                                        <a href="/referanslar" title="Referanslar" ref="Referanslar" alt="Referanslar">Referanslar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col_3d8g  col-style">
+                    <div class="box-service box-footer">
+                        <div class="module clearfix">
+                            <h3 class="modtitle">Menü </h3>
+                            <div class="modcontent">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="/belgeler" title="Belgeler" ref="Belgeler" alt="İletişim">Belgeler</a>
+                                    </li>
+                                    <li>
+                                        <a href="/blog" title="Blog" ref="Blog" alt="İletişim">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="/soru-cevap" title="Soru/Cevap"  ref="Soru/Cevap" alt="Soru/Cevap">Soru/Cevap</a>
+                                    </li>
+                                    <li>
+                                        <a href="/iletisim" title="İletişim" ref="İletişim" alt="İletişim">İletişim</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row middle2 ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-style">
+                    <div class="">
+                        <h3 class="modtitle"></h3>
+                        <ul>
+                            <li>
+                                <a title="App Store" href="#">
+                                </a>
+                            </li>
+                            <li>
+                                <a title="App Store" href="#">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="socials-w module">
+                        <h3 class="modtitle">BİZİ TAKİP EDİN </h3>
+                        <ul class="socials">
+                            @*   <li class="facebook">
+                                <a class="_blank" href="" target="_blank"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li class="twitter">
+                                <a class="_blank" href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                </li>*@
+                            <li class="google_plus">
+                                <a class="_blank" href="https://instagram.com/dooremacelikkapi?igshid=YmMyMTA2M2Y=" target="_blank" rel="nofollow"><i class="fa fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="categories-footer">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.09479819864816!2d28.92532761214074!3d41.03582687558803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caba6d937bffff%3A0x6c25c46baa7b9b98!2sDoorema!5e0!3m2!1str!2str!4v1662734725891!5m2!1str!2str" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Bottom Container -->
+    <section class="footer-bottom ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12 copyright-w">
+                    <div class="copyright">
+                        Tüm Hakları <a href="http://www.dooreme.com.tr" title="Çelik kapı" ref="Çelik kapı" alt="Çelik kapı" target="_blank">Doorema'ya  Aittir...</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 payment-w">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Footer Bottom Container -->
+    <!--Back To Top-->
+    <div class="back-to-top"><i class="fa fa-angle-up"></i></div>
+</footer>

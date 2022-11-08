@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin
+Disallow: /login
+Disallow: /admin-blog
+Disallow: /admin-urun
+Disallow: /admin-slider
+Disallow: /admin-referans
+Disallow: /admin-teknik-bilgi
+Disallow: /admin-belge
+Disallow: /admin-kurumsal
+Disallow: /admin-kategori

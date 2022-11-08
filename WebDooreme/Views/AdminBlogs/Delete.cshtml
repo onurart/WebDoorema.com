@@ -1,0 +1,45 @@
+﻿@model WebDooreme.Models.Blog
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div>
+        <h1>Sil</h1>
+        <h4>Blog</h4>
+        <hr />
+        <h3 class="text-danger"><b>Bunu silmek istediğinizden emin misiniz?</b></h3>
+        <br />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Resim
+            </dt>
+            <dd class="col-sm-10">
+                <img class="img-responsive" src="/upload/@Model.ImageUrl" width="150" />
+            </dd>
+            <dt class="col-sm-2">
+                Başlık
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt class="col-sm-2">
+                Açıkmalama
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                Oluşturma Tarihi
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CreateDate)
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            <a class="btn btn-success" asp-action="Index">Blog Listesi</a>
+        </form>
+    </div>
+</section>

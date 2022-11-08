@@ -1,0 +1,36 @@
+﻿@model WebDooreme.Models.Reference
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ReferenceName" class="control-label"></label>
+                    <input asp-for="ReferenceName" class="form-control" />
+                    <span asp-validation-for="ReferenceName" class="text-danger"></span>
+                </div>             
+                <div class="form-group">
+                    <label asp-for="ReferenceImage" class="control-label"></label>
+                    <input asp-for="ReferenceImage" class="form-control" />
+                    <span asp-validation-for="ReferenceImage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReferenceThumb1" class="control-label"></label>
+                    <input asp-for="ReferenceThumb1" class="form-control" />
+                    <span asp-validation-for="ReferenceThumb1" class="text-danger"></span>
+                </div>              
+                <div class="form-group">
+                    <input type="submit" value="Ekle" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Geri</a>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+﻿@model WebDooreme.Models.Product
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ProductId" />
+                <div class="form-group">
+                    <label asp-for="StockCode" class="control-label">Stok Kodu</label>
+                    <input asp-for="StockCode" class="form-control" />
+                    <span asp-validation-for="StockCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProductName" class="control-label">Ürün Adı</label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Açıklama</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label">Ürün Fotoğraf</label>
+                    <input asp-for="Image" class="form-control" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageDetails" class="control-label">Ürün Detay Fotoğraf</label>
+                    <input asp-for="ImageDetails" class="form-control" />
+                    <span asp-validation-for="ImageDetails" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Kayit" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-danger">Geri</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

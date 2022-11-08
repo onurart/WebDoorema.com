@@ -1,0 +1,157 @@
+﻿@using WebDooreme.Helpers
+@using WebDooreme.Models
+@model List<Product>
+
+<style>
+      .product-card {
+        width: 100%;
+        position: relative;
+        box-shadow: 0 2px 7px #dfdfdf;
+        margin: 50px auto;
+        background: #fafafa;
+        
+
+      
+    }
+
+    .badge {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: red;
+        color: #fff;
+        padding: 3px 10px;
+        border-radius: 0px 10px 0px 10px;
+    }
+
+
+    .product-tumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        padding: 10px;
+        background: #f0f0f0;
+    }
+
+    .product-tumb img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .product-details {
+        padding: 70px;
+        padding-top:2px;
+    }
+
+    .product-catagory {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ccc;
+        margin-bottom: 18px;
+    }
+
+    .product-details h4 a {
+        font-weight: 800;
+        display: block;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        color: #ff3c20;
+        text-decoration: none;
+        transition: 0.3s;
+        margin-left:25%;
+    }
+
+    .product-details h4 a:hover {
+        color: #fbb72c;
+    }
+
+    .product-details p {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 18px;
+        color: #999;
+    }
+
+    .product-bottom-details {
+        overflow: hidden;
+        border-top: 1px solid #ff3c20;
+        padding-top: 20px;
+    }
+
+    .product-bottom-details div {
+        float: left;
+        width: 50%;
+    }
+
+    .product-price {
+        font-size: 18px;
+        color: #fbb72c;
+        font-weight: 600;
+    }
+
+    .product-price small {
+        font-size: 80%;
+        font-weight: 400;
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .product-links {
+        text-align: right;
+    }
+
+    .product-links a {
+        display: inline-block;
+        margin-left: 5px;
+        color: #e1e1e1;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    .product-links a:hover {
+        color: #fbb72c;
+    }
+</style>
+
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="product-card">
+        <div class="badge">@item.InstallmentTable</div>
+        <div class="product-tumb">
+            @{
+                var imageSrcm = item.StockCode.ToLower();
+                var strImagem = imageSrcm + ".jpg";
+            }
+            <img src="~/ProductImages/ProductL/@strImagem" ref="@item.StockCode" alt="@item.ProductName" title="@item.ProductName">
+        </div>
+        <div class="product-details">
+            <h4><a href="">@item.StockCode</a></h4>
+            <span class="product-catagory"></span>
+            <h4><a href=""></a></h4>
+            <p></p>
+            <div class="product-bottom-details">
+                <div class="list-block" style="font-size:15px; font-weight:700;display:contents; text-transform:uppercase">
+                <a href="/urun/detay/@UrlExtension.FriendlyUrl(Url,item.StockCode)/@item.StockCode" target="_self" ref="@item.ProductName" title="@item.StockCode">
+                    <button class="addToCart btn-button btn btn-danger"  type="button" title="Sepete Ekle">
+                        ÜRÜN DETAYI
+                    </button>
+                </a>
+                <button class="wishlist btn-button btn btn-danger" type="button" title="Beğen" onclick="wishlist.add('101');">
+                    <i class="fa fa-heart"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+    </div>
+}

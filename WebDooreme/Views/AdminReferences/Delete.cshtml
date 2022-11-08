@@ -1,0 +1,60 @@
+﻿@model WebDooreme.Models.Reference
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div>
+        <h4>Reference</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ReferenceName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReferenceName)
+            </dd>
+            @*<dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ReferenceType)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ReferenceType)
+                </dd>*@
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ReferenceImage)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReferenceImage)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ReferenceThumb1)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReferenceThumb1)
+            </dd>
+            @*<dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ReferenceThumb2)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ReferenceThumb2)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ReferenceThumb3)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ReferenceThumb3)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ReferenceThumb4)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ReferenceThumb4)
+                </dd>*@
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ReferenceId" />
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            <a asp-action="Index">Geri Dön</a>
+        </form>
+    </div>
+</section>

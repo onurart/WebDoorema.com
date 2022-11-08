@@ -1,0 +1,48 @@
+﻿@model WebDooreme.Models.Blog
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <h1>Düzenle</h1>
+    <h4>Blog</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <img class="img-responsive" src="/upload/@Model.ImageUrl" width="150" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="ImageUrl" />
+                    <label asp-for="ImageFile" class="control-label">Resim Seçiniz</label>
+                    <input asp-for="ImageFile" accept="image/*" class="form-control" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">Başlık</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Açıklama</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CreateDate" class="control-label">Oluşturma Tarihi</label>
+                    <input asp-for="CreateDate" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="CreateDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Kaydet" class="btn btn-primary" />
+                    <a class="btn btn-success" asp-action="Index">Blog Listesi</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+    </div>
+</section>

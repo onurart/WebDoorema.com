@@ -1,0 +1,21 @@
+﻿@section metatags{
+    <title>@ViewBag.title</title>
+    @*<meta name="keywords" content="@ViewBag.keywords" />*@
+    <meta name="description" content="@ViewBag.description" />
+}
+  
+    @await Component.InvokeAsync("Slider")
+    <div class="row box-content2">
+        @await Component.InvokeAsync("tse")
+        <div class="row box-content2">
+            @await Component.InvokeAsync("Discount")
+            @await Component.InvokeAsync("WheyDooreme")
+
+        </div>
+    </div>
+    @await Component.InvokeAsync("ProjeDoor")
+    @await Component.InvokeAsync("SteelDoor")
+    @await Component.InvokeAsync("VillaDoor")
+    @await Component.InvokeAsync("FireDoor")
+    @await Component.InvokeAsync("Blog")
+    @await Component.InvokeAsync("Referans")

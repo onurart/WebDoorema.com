@@ -1,0 +1,41 @@
+﻿@using WebDooreme.Models
+@model List<Institutional>
+@section metatags{
+    <title>@ViewBag.title</title>
+    <meta name="keywords" content="@ViewBag.keywords" />
+    <meta name="description" content="@ViewBag.description" />
+}
+<div class="main-container container">
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Ana Sayfa</a></li>
+        <li><a href="#">Kurumsal</a></li>
+    </ul>
+    <div class="row">
+        <div id="content" class="col-sm-12">
+            @foreach (var item in Model)
+            {
+                <div class="about-us about-demo-3">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 about-image"> <img src="@item.İmages" alt="Doorema Çelik Kapı"> </div>
+                        <div class="col-lg-9 col-md-9 about-info">
+                            <h1 style="color: #ed1c24; font-weight:bold;text-transform:uppercase">@item.Tİtle</h1>
+                            <div class="about-text about-textt" style="font-size:14px;line-height:25px;text-align:justify;">
+                                <p style="color:black">
+                                    @item.Açıklama
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <div id="content">
+        <div class="container">
+            @await Component.InvokeAsync("Blog")
+            @await Component.InvokeAsync("Referans")
+        </div>
+    </div>
+</div>

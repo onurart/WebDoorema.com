@@ -1,0 +1,41 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "GetBlogById";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Main Container  -->
+<div class="main-container container">
+    <ul class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li><a href="@Url.Action("Index","Blog")">Blog</a></li>
+        <li><a href="#">@Model.Title</a></li>
+    </ul>
+    
+    <div class="row">
+        <!--Left Part Start -->
+        <aside class="col-md-3 col-sm-4 col-xs-12 content-aside left_column " id="column-left">
+            <div class="module blog-category titleLine">
+                <h3 class="modtitle">Blog Category</h3>
+                @await Component.InvokeAsync("LastBlogCategories")
+            </div>
+        </aside>
+        <div id="content" class="col-md-9 col-sm-8">
+            <div class="article-info">
+                <div class="blog-header">
+                    <h3>@Model.Title</h3>
+                </div>
+                <div class="article-sub-title">
+                    <span class="article-author"><a href="#"></a></span>
+                    <span class="article-date"></span>
+                </div>
+                <div class="form-group">
+                  
+                    <a href="" class="image-popup"><img src="~/upload/@Model.ImageUrl" alt="Kire tuma demonstraverunt lector"></a>
+                </div>
+                <div class="article-description">
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

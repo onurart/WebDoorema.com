@@ -1,0 +1,26 @@
+﻿@{
+    int category = ViewBag.selectedCategory;
+}
+@section metatags{
+    <title>@ViewBag.title</title>
+    <meta name="keywords" content="@ViewBag.keywords" />
+    <meta name="description" content="@ViewBag.description" />
+}
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i></a></li>
+        <li><a href="urun/ana-kategori/proje-celik-kapilari/8" alt="Kategori Ürün Listesi" ref="Kategori  Ürün Listesi" title="Kategori  Ürün Listesi">Ürün Listesi</a></li>
+
+    </ul>
+
+    <br />
+    <aside class="col-sm-4 col-md-3 content-aside" id="column-left">
+        @await Component.InvokeAsync("ProductCategoriesMenu",new{categoryId=category})
+        @await Component.InvokeAsync("Campaign")
+    </aside>
+    <div id="content" class="col-md-9 col-sm-8">
+        <div class="products-category">
+            @await Component.InvokeAsync("ProductList",new{categoryId=category})
+        </div>
+    </div>
+
+

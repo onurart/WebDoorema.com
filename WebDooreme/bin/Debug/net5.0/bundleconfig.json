@@ -1,0 +1,49 @@
+[
+  {
+    "outputFileName": "wwwroot/css/vendor.css",
+    "inputFiles": [
+      "wwwroot/css/font-awesome/css/font-awesome.min.css",
+      "wwwroot/js/datetimepicker/bootstrap-datetimepicker.min.css",
+      "wwwroot/js/owl-carousel/owl.carousel.css",
+      "wwwroot/css/themecss/lib.css",
+      "wwwroot/js/jquery-ui/jquery-ui.min.css",
+      "wwwroot/js/minicolors/miniColors.css",
+      "wwwroot/css/themecss/so_searchpro.css",
+      "wwwroot/css/themecss/so_megamenu.cs",
+      "wwwroot/css/themecss/so-categories.css",
+      "wwwroot/css/themecss/so-listing-tabs.css",
+      "wwwroot/css/themecss/so-newletter-popup.css",
+      "wwwroot/css/footer/footer4.css",
+      "wwwroot/css/header/header4.css",
+      "wwwroot/css/home4.css",
+      "wwwroot/css/responsive.css"
+    ],
+    "minify": {
+      "enabled": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/vendor.js",
+    "inputFiles": [
+      //"wwwroot/js/jquery-2.2.4.min.js",
+      //"wwwroot/js/bootstrap.min.js",
+      //"wwwroot/js/owl-carousel/owl.carousel.js",
+      //"wwwroot/js/themejs/libs.js",
+      //"wwwroot/js/unveil/jquery.unveil.js",
+      //"wwwroot/js/countdown/jquery.countdown.min.js",
+      //"wwwroot/js/dcjqaccordion/jquery.dcjqaccordion.2.8.min.js",
+      //"wwwroot/js/datetimepicker/moment.js",
+      //"wwwroot/js/datetimepicker/bootstrap-datetimepicker.min.js",
+      //"wwwroot/js/jquery-ui/jquery-ui.min.js",
+      //"wwwroot/js/modernizr/modernizr-2.6.2.min.js",
+      //"wwwroot/js/themejs/homepage.js",	
+      //"wwwroot/js/themejs/so_megamenu.js",
+      //"wwwroot/themejs/addtocart.js",
+      //"wwwroot/js/themejs/application.js",
+      //"wwwroot/js/minicolors/jquery.miniColors.min.js"
+    ],
+    "minify": {
+      "enabled": false
+    }
+  }
+]

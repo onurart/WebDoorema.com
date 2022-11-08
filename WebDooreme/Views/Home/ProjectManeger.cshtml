@@ -1,0 +1,56 @@
+﻿@section metatags{
+    <title>@ViewBag.title</title>
+    <meta name="keywords" content="@ViewBag.keywords" />
+    <meta name="description" content="@ViewBag.description" />
+}
+<style>
+    .projectManager {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: red
+    }
+    .projectLeft {
+        width: 300px;
+        background-color: yellow
+    }
+    .projectCenter {
+        width: 300px;
+        background-color: yellow;
+    }
+    .projectRigh {
+        width: 700px;
+        float: right;
+        background-color: yellow
+    }
+    .projecManagerImages {
+        text-align: center;
+        margin: 10px;
+        margin: 10px;
+    }
+  
+</style>
+<div class="main-container container">
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home"></i> Ana Sayfa</a></li>
+        <li><a href="#">Proje Yönetimi</a></li>
+    </ul>
+    <div class="about-us about-demo-3">
+        <div class="row">
+            <div class="col-lg-12 col-md-6 projecManagerImages">
+                <img src="~/image/ProjectManager/projekapak.png" alt="Doorema Çelik Kapı" />
+            </div>
+            <div class="col-lg-6 col-md-6 about-image"> <img src="~/image/ProjectManager/PROJEDİA.png" width="700" alt="Image Client"> </div>
+            <div class="col-lg-6 col-md-6 about-info">
+                <h1 style="color: #ed1c24; font-weight:bold;text-transform:uppercase">PROJE YÖNETİMİ</h1>
+                <div class="about-text about-textt">
+                    <p style="font-size:14px;line-height:25px;text-align:justify; color:black"><b >Doorema Çelik Kapı</b>, uzun yılların katmış olduğu tecrübe ile projelerde yüksek kalitede hizmet sunmaktadır. Firmamız çalışmalarını alanında uzman çalışanları ile yenilikçi ve çözüm odaklı bir şekilde sürdürmektedir. Projelerin ihtiyaçları doğrultusunda, gerekli olan inceleme ve analizlerle proje yönetim adımları da gözetilerek ürün ve hizmet sağlanmaktadır. Projelerin şartnamelerinin gerektirdiği tüm özellikleri karşılayarak çalışmalarını yürüten Doorema Çelik Kapı; kaliteli malzeme, doğru fiyat, planlanan süre içerisinde teslimat ve montaj, montajdan sonra oluşabilecek olan sorunlarla ilgili teknik destek gibi hizmetleri sağlayarak proje bazlı çalışmalarını istek ve beklentileri karşılayarak sunmaktadır.</p>
+                        <p style="font-size:14px;line-height:25px;text-align:justify;color:black">
+                        <b>Doorema Çelik Kapı</b> olarak, kalitemizi her zaman üst seviyede tutarak, her gün değişen ve gelişen teknolojiyi de yakından takip ederek, üretim ve hizmetlerimize devam etmekteyiz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("Referans")

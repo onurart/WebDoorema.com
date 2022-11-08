@@ -1,0 +1,29 @@
+﻿@model WebDooreme.Models.Reference
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1>Details</h1>
+<div>
+    <h4>Reference</h4>
+    <hr />
+    <dl class="row">
+        
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReferenceName)
+        </dd>        
+        
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReferenceImage)
+        
+        
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReferenceThumb1)
+        </dd>        
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ReferenceId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

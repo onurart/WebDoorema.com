@@ -1,0 +1,23 @@
+﻿@using WebDooreme.Models
+@model List<Product>
+<div class="module so-extraslider-ltr extra-layout4 cus2" style="border-radius: 30px 30px 30px 30px ">
+    <div class="form-group col-pre" style="border-radius: 30px 30px 30px 30px ">
+        <div class="m-head">
+            <h1 style="font-weight:700">Villa ve Bina Giriş  Kapıları</h1>
+            <a class="btn btn-danger"  href="/urun/ana-kategori/villa-ve-bina-giris-kapilari/10">Tümünü Gör</a>
+        </div>
+    </div>
+    <div class="modcontent">
+        <div class="so-extraslider">
+            <div class="yt-content-slider extraslider-inner products-list" data-rtl="yes" data-pagination="no" data-autoplay="no" data-delay="4" data-speed="0.6" data-margin="0" data-items_column0="3" data-items_column1="3" data-items_column2="2" data-items_column3="2" data-items_column4="1" data-arrows="yes" data-lazyload="yes" data-loop="no" data-buttonpage="top">
+
+          @*<div class="yt-content-slider extraslider-inner products-list" data-rtl="yes" data-pagination="no" data-autoplay="no" data-delay="4" data-speed="0.6" data-margin="30" data-items_column0="3" data-items_column1="4" data-items_column2="3" data-items_column3="4" data-items_column4="4" data-arrows="yes" data-lazyload="yes" data-loop="no" data-buttonpage="top">*@
+                @*<div class=" cat-wrap theme3 font-title yt-content-slider" data-rtl="yes" data-autoplay="no" data-autoheight="yes" data-delay="4" data-speed="0.6" data-margin="30" data-items_column0="4" data-items_column1="8" data-items_column2="3" data-items_column3="2" data-items_column4="1" data-arrows="yes" data-pagination="no" data-lazyload="yes" data-loop="no" data-hoverpause="yes">*@
+                @foreach (var item in Model)
+                {
+                    @await Component.InvokeAsync("ProductDetail", new { stockCode = item.StockCode })
+                }
+            </div>
+        </div>
+    </div>
+</div>

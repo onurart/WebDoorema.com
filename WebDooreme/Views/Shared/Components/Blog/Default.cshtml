@@ -1,0 +1,38 @@
+﻿@using WebDooreme.Models
+@using WebDooreme.Helpers
+@model IList<Blog>
+
+    <style>
+     blogdd{
+        padding-left:8px;
+    }
+    </style>
+<div class="module so-latest-blog blog-home" style="border-radius: 27px 45px 27px 28px">
+    <h2 class="modtitle" ref="Güncel Blog Yazıları" alt="Güncel Blog Yazıları" title="Güncel Blog Yazıları"><span>Güncel Blog Yazıları</span></h2>
+    <div class="modcontent clearfix">
+        <div class="so-blog-external">
+            <div class="yt-content-slider blog-external" data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="30" data-items_column0="5" data-items_column1="3" data-items_column2="3" data-items_column3="2" data-items_column4="1" data-arrows="yes" data-pagination="no" data-lazyload="yes" data-loop="no" data-hoverpause="yes" data-buttonpage="top">
+                @foreach (var item in Model)
+                {
+                    <div class="media">
+                        <div class="item">
+                            <div class="media-left">
+                                <a href="/blog/detay/@UrlExtension.FriendlyUrl(Url,item.Title)/@item.Id" target="_self" title="@item.Title">
+                                    <img src="/upload/@item.ImageUrl" alt="@item.Title" />
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-content" style="padding-left:initial">
+                                    <h4 class="media-heading font-title">
+                                        <a href="/blog/detay/@UrlExtension.FriendlyUrl(Url,item.Title)/@item.Id" title="@item.Title" target="_self" style="display:flex;padding-left:5px; ">@item.Description.Substring(0,130)</a>
+                                    </h4>
+  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

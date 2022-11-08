@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WebDooreme.Models.Reference>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div class="row page-header no-background no-shadow margin-b-0">
+        <div class="col-lg-6 align-self-center ">
+            <h2></h2>
+            <ol class="breadcrumb">
+            </ol>
+        </div>
+        <div class="col-lg-6 align-self-center text-right">
+            <a class="btn btn-success box-shadow btn-icon btn-rounded" asp-action="Create">Yeni Yazı Ekle</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <table id="datatable" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ReferenceName)
+                                </th>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.ReferenceType)
+                                    </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ReferenceImage)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ReferenceThumb1)
+                                </th>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.ReferenceThumb2)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ReferenceThumb3)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ReferenceThumb4)
+                                    </th>*@
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ReferenceName)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.ReferenceType)
+                                        </td>*@
+                                    <td>
+                                        <img src="@Html.DisplayFor(modelItem => item.ReferenceImage)" />
+                                    </td>
+                                    <td>
+                                        <img src="@Html.DisplayFor(modelItem => item.ReferenceThumb1)" />
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.ReferenceThumb2)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ReferenceThumb3)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ReferenceThumb4)
+                                        </td>*@
+                                    <td>
+                                        <a class="btn btn-primary btn-rounded box-shadow" asp-action="Edit" asp-route-id="@item.ReferenceId">Düzenle</a>
+                                        <a class="btn btn-danger btn-rounded box-shadow" asp-action="Delete" asp-route-id="@item.ReferenceId">Sil</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

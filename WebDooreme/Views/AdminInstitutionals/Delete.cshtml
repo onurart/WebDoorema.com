@@ -1,0 +1,36 @@
+﻿@model WebDooreme.Models.Institutional
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-4">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Tİtle)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Tİtle)
+                </dd>
+                <dd class="col-sm-10">
+                    <img src="@Html.DisplayFor(model => model.İmages)   " />
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Açıklama)
+                </dt>
+                <dd class="col-sm-10">
+                    <br />
+                    <br />
+                    <br />
+                    @Html.DisplayFor(model => model.Açıklama)
+                </dd>
+            </dl>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Sil" class="btn btn-danger" /> |
+                <a asp-action="Index">Geri </a>
+            </form>
+        </div>
+    </div>
+</section>

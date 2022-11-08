@@ -1,0 +1,23 @@
+﻿@*@model List<Blog>
+    <div class="modcontent">
+        <ul class="list-group ">
+            <li class="list-group-item"> <a href="blog-page.html" class="group-item active"></a></li>
+            @foreach (var item in Model)
+            {
+                <li class="list-group-item"><a href="Blog/Details/@item.Id" class="group-item">@item.Title</a></li>
+            }
+        </ul>
+    </div>*@
+@model List<Blog>
+@using WebDooreme.Helpers
+<div class="modcontent">
+    <ul class="list-group ">
+        <li class="list-group-item"> <a href="blog-page.html" class="group-item active"></a></li>
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <a href="/blog/detay/@UrlExtension.FriendlyUrl(Url,item.Title)/@item.Id" class="group-item" title="@item.Title" ref="@item.Title" alt="@item.Title">@item.Title</a>
+            </li>
+        }
+    </ul>
+</div>
